@@ -1,0 +1,67 @@
+This web application allows users to register, log in (either traditionally or via Google), and participate in group or private chats.
+ The app is built using Node.js, Express, PostgreSQL, HTML, CSS, JavaScript, EJS, and WebSocket.IO.
+
+Technologies Used
+
+ * Node.js: JavaScript runtime for server-side programming.
+ * Express: Web framework for Node.js.
+ * PostgreSQL: Relational database management system.
+ * HTML/CSS/JavaScript: For front-end development.
+ * EJS: Embedded JavaScript templating.
+ * Socket.IO: Library for real-time web applications.
+
+Installation
+
+ * Clone the repository: Download the codebase from the repository to your local machine.
+ * Install dependencies: Run npm install to install all necessary packages.
+ * Set up environment variables: Create a .env file in the root directory with the required environment variables, such as database     credentials and Google OAuth credentials.
+ * Run the server: Start the server using npm start or a similar command specified in your package.json.
+Database Setup
+ * Create the database: Set up a PostgreSQL database.
+ * Create the user table: Create a table in the database to store user information, such as email and password
+
+Features 
+
+* User Registration
+* Description: Users can register by providing their email and password.
+* Database Interaction: User information is stored in the PostgreSQL database
+.
+Steps:
+
+ * User accesses the registration page.
+ * User fills out the registration form with email and password.
+ * On form submission, the server hashes the password and stores the user data in the database.
+ * User is redirected to the login page after successful registration.
+ * Description: Users can log in with their registered email and password.
+
+Steps:
+ * User accesses the login page.
+ * User fills out the login form with email and password.
+ * On form submission, the server verifies the credentials against the database.
+ * On successful authentication, the user is granted access to the chat functionalities.
+
+Google Login
+
+Steps:
+ * User clicks on the Google login button.
+ * User is redirected to Google's OAuth 2.0 authentication page.
+ * User consents to sharing their Google account information.
+ * On successful authentication, the server retrieves user information and logs them in or registers them if they don't already have an account.
+
+Private Chat
+
+  Description: Users can engage in private messaging with other users.
+
+  Steps:
+    * User accesses the private chat page.
+    *  User selects a recipient from a list of registered users.
+    * User sends a message, which is delivered to the recipient in real-time using WebSocket.IO.
+    * Messages are displayed in the chat interface for both sender and receiver.
+
+Group Chat
+Description: Users can participate in a group chat with all registered users.
+Steps:
+ * User accesses the group chat page.
+ * User sends a message to the group.
+ * The message is broadcast to all connected users in the group chat using WebSocket.IO.
+ * Messages are displayed in the group chat interface for all participants.
